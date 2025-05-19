@@ -1,0 +1,16 @@
+.v-input {
+  .v-input__control {
+    .v-field {
+      .v-label{
+        color: $color_light_pink;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+      &.v-field--variant-outlined {
+        color: $color_light_pink;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+    }
+  }
+}

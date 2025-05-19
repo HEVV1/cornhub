@@ -1,0 +1,119 @@
+.block-about {
+  .about__wrapper {
+    position: relative;
+    .about__wrapper-row--1 {
+      width: 70%;
+      span {
+        display: block;
+        width: 91%;
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+      }
+    }
+    .about__wrapper-row--2 {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      .about__wrapper-subrow {
+        width: 70%;
+        .wrapper-image {
+          z-index: 5;
+          position: absolute;
+          right: -10%;
+          bottom: 97%;
+        }
+        .about__line {
+          position: absolute;
+          bottom: 85%;
+          left: 50%;
+          background-color: $color_white;
+          width: .4rem;
+          height: 19rem;
+          border-radius: 8rem;
+          z-index: 5;
+          box-shadow: 0 0 .4rem 0 $color_white;
+        }
+      }
+    }
+
+
+  }
+}
+
+@include res('lg') {
+  .block-about {
+    .about__wrapper {
+      .about__wrapper-row--1{
+        span {
+          //margin: auto;
+        }
+      }
+      .about__wrapper-row--2 {
+        .about__wrapper-subrow {
+          .wrapper-image{
+            right: -22%;
+            img{
+              width: 43.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include res('md') {
+  .block-about {
+    margin-top: 5.8rem;
+    .about__wrapper {
+      .about__wrapper-row--1 {
+        width: 100%;
+        span {
+          padding-top: 0;
+          padding-bottom: 0;
+          width: 100%;
+        }
+      }
+      .about__wrapper-row--2 {
+        margin-top: -1rem;
+        .about__wrapper-subrow {
+          width: 100%;
+          .wrapper-image{
+            top: 80%;
+            right: -21%;
+            img{
+              width: 39.9rem;
+            }
+          }
+          .about__line {
+            left: 85%;
+            bottom: 90%;
+            height: 13.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include res('sm') {
+  .block-about {
+    .about__wrapper {
+      .about__wrapper-row--2 {
+        .about__wrapper-subrow {
+          .wrapper-image{
+            img{
+              width: 25rem;
+            }
+          }
+          .about__line {
+            left: 85%;
+            bottom: 83%;
+            height: 13.8rem;
+          }
+        }
+      }
+    }
+  }
+}

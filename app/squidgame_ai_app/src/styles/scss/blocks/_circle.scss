@@ -1,0 +1,38 @@
+.block-circle {
+  position: fixed;
+  border-radius: 100%;
+  filter: blur(20rem);
+  &.elipse-1 {
+    left: 70%;
+    top: -3%;
+    width: 53.6rem;
+    height: 60.52rem;
+    background-color: rgba($color: $color_dark_mid_violet, $alpha: 0.37);
+  }
+  &.elipse-2 {
+    top: 20%;
+    right: 60%;
+    -webkit-transform: translateX(20%);
+    -moz-transform: translateX(20%);
+    -ms-transform: translateX(20%);
+    -o-transform: translateX(20%);
+    transform: translateX(20%);
+    width: 100rem;
+    height: 150rem;
+    background-color: rgba($color: $color_pink, $alpha: .6);
+  }
+  &.elipse-3 {
+    top: 16%;
+    left: 42%;
+    width: 60.52rem;
+    height: 38.32rem;
+    background-color: rgba($color: $color_light_pink, $alpha: .37);
+  }
+  &.elipse-4 {
+    top: 49%;
+    left: 48%;
+    width: 55.6rem;
+    height: 130rem;
+    background-color: rgba($color: $color_light_pink, $alpha: .37);
+  }
+}

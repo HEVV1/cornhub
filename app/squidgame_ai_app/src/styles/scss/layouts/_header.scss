@@ -1,0 +1,230 @@
+.block-header {
+  position: sticky;
+  top: 0;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  backdrop-filter: saturate(180%) blur(.8rem);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+  .header__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    //FOR DESKTOP SIZE
+    .header__navbar-components {
+      display: flex;
+      .header__navbar {
+        display: flex;
+        align-items: center;
+        &.nb-links {
+          margin-right: 4rem;
+        }
+        &.nb-icons {
+          z-index: 1;
+        }
+        .header__navbar--links {
+          &:not(:last-child) {
+            margin-right: 3.2rem;
+          }
+          button {
+            display: block;
+            text-align: center;
+            position: relative;
+            line-height: 3;
+            transition: cubic-bezier(0.27, 0.48, 0.17, 0.99) $default_transition_time;
+            white-space: nowrap;
+            letter-spacing: .3rem;
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0rem;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 0;
+              height: 0.4rem;
+              transition: cubic-bezier(0.27, 0.48, 0.17, 0.99) $default_transition_time;
+              object-position: 50% 50%;
+            }
+            &:hover::after {
+              width: 100%;
+            }
+            &.button-active {
+              &::after {
+                width: 100% !important;
+              }
+            }
+          }
+          &.live {
+            button {
+              color: $color_text_pink;
+              font-weight: 800;
+              &::after {
+                background-color: $color_text_pink;
+              }
+            }
+          }
+          &.generate {
+            button {
+              color: $color_dark_violet;
+              font-weight: 800;
+              &::after {
+                background-color: $color_dark_violet;
+              }
+            }
+          }
+          &.pro {
+            button {
+              color: $color_dark_red;
+              font-weight: 700;
+              &::after {
+                background-color: $color_dark_red;
+              }
+            }
+          }
+          &.login {
+            button {
+              color: $color_white;
+              &::after {
+                background-color: $color_white;
+              }
+            }
+          }
+        }
+        .header__navbar--icons {
+          &:not(:last-child) {
+            margin-right: 0.6rem;
+          }
+          a {
+            display: flex;
+            padding: 0.6rem;
+            img {
+              width: 2.4rem;
+              height: 2.4rem;
+            }
+          }
+        }
+      }
+    }
+    // FOR MOBILE SIZE
+    .header__wrapper--mobile-menu {
+      z-index: 9;
+      transition: cubic-bezier(0.27, 0.48, 0.17, 0.99) $default_transition_time;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      background: black;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include linear-gradient('to bottom, rgba(60, 4, 105, 1), rgba(124, 15, 126, 1), rgba(178, 18, 76, 1)');
+      .header__navbar-components {
+        flex-flow: column;
+        .header__navbar {
+          &.nb-links {
+            flex-flow: column;
+            margin-right: 0 !important;
+            width: 100%;
+            align-items: center;
+            .header__navbar--links {
+              margin-right: 0 !important;
+              margin-bottom: 2rem;
+              transform: translateX(10rem);
+              opacity: 0;
+              transition: cubic-bezier(0.27, 0.48, 0.17, 0.99) $default_transition_time;
+              visibility: hidden;
+              button {
+                font-size: 1.8rem;
+              }
+            }
+          }
+          &.nb-icons {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10rem);
+            transition: cubic-bezier(0.27, 0.48, 0.17, 0.99) $default_transition_time;
+            transition-delay: 0s;
+          }
+        }
+      }
+      &.activeMenu {
+        right: 0;
+        .header__navbar-components {
+          .header__navbar {
+            &.nb-links {
+              .header__navbar--links {
+                @for $i from 1 through 5 {
+                  &:nth-child(#{$i}) {
+                    transition-delay: 0s + $i * 0.15s;
+                    transform: translateX(0);
+                    opacity: 1;
+                    visibility: visible;
+                  }
+                }
+              }
+            }
+            &.nb-icons {
+              visibility: visible;
+              opacity: 1;
+              -webkit-transform: translateY(0);
+              -moz-transform: translateY(0);
+              -ms-transform: translateY(0);
+              -o-transform: translateY(0);
+              transform: translateY(0);
+              transition-delay: .7s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .header__background {
+    position: absolute;
+    width: 100%;
+    max-height: 11.7rem;
+    bottom: 0;
+    @include linear-gradient('to bottom, '+rgba($color: $color_black, $alpha: .6)+' 60%, '+rgba($color: $color_dark_violet, $alpha: .6)+'');
+  }
+}
+
+
+@include res('md') {
+  .block-header {
+    .header__wrapper {
+      .header__navbar-components {
+        .header__navbar {
+          &.nb-links {
+            margin-right: 2rem;
+          }
+          .header__navbar--links {
+            &:not(:last-child) {
+              margin-right: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include res('sm') {
+  .block-header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .header__wrapper {
+      .header__wrapper--mobile-menu {
+        .header__navbar-components {
+          .header__navbar {
+            &.nb-links {
+              .header__navbar--links {
+                margin-bottom: .7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

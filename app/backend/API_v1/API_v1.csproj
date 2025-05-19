@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JWT" Version="10.1.1" />
+    <PackageReference Include="MailKit" Version="4.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\UsersPhoto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\x86\node.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\x86\edge_nativeclr.node" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\x64\node.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\x64\edge_nativeclr.node" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\edge.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Евген\.nuget\packages\edgejs\11.15.0\build\..\content\edge\double_edge.js" />
+  </ItemGroup>
+
+</Project>

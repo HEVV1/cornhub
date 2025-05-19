@@ -1,0 +1,97 @@
+.block-generate {
+  margin-top: 10rem;
+  .generate__wrapper {
+    display: flex;
+    .generate__form-spot {
+      flex-basis: 80%;
+    }
+    .generate__image-spot {
+      flex-basis: 50%;
+      margin-left: 2rem;
+      .generate__image-wrapper {
+        position: sticky;
+        top: 15rem;
+        overflow: hidden;
+        &.no-image {
+          height: 46.5rem;
+        }
+        .generate__image-wrapper--no-image {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-50%) translateX(-50%);
+          background-color: rgba($color: $color_dark_grey, $alpha: 1);
+          border-radius: 1.5rem;
+          border: .2rem solid $color_light_pink;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
+          .wrapper-text {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            text-align: center;
+          }
+        }
+        .generate__image-wrapper--is-image {
+          display: flex;
+          img {
+            border: .2rem solid $color_light_pink;
+            background-color: rgba($color: $color_dark_grey, $alpha: 1);
+            border-radius: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  .wrapper-button-submit {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: rgba($color: $color_dark_grey, $alpha: .9);
+    text-align: center;
+    .v-btn{
+      font-size: 1.8rem;
+      width: 20rem;
+      height: 4.8rem;
+    }
+  }
+}
+
+@include res('md') {
+  .block-generate {
+    margin-top: 5rem;
+    .generate__wrapper {
+      display: grid;
+      .generate__image-spot {
+        grid-row: 1/ 1;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@include res('sm') {
+  .block-generate {
+    .generate__wrapper {
+      .generate__image-spot {
+        .generate__image-wrapper {
+          &.no-image {
+            height: 30rem;
+          }
+        }
+      }
+    }
+    .wrapper-button-submit {
+      .v-btn{
+        font-size: 1.4rem;
+        width: 15rem;
+        height: 3.8rem;
+      }
+    }
+  }
+}

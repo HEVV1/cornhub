@@ -1,0 +1,111 @@
+.block-form {
+  width: 100%;
+  height: calc(100vh - 11.7rem - 23rem);
+  .form__wrapper {
+    max-width: 70rem;
+    width: 100%;
+    @include linear-gradient('to bottom, '+rgba($color: $color_dark_grey, $alpha: 1)+' 60%, '+rgba($color: $color_dark_grey, $alpha: 1)+'');
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1.5rem;
+    border: .2rem $color_light_pink solid;
+    margin: auto;
+    .form__wrapper-bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .wrapper-text {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        span {
+          color: $color_light_pink;
+          font-weight: 400;
+        }
+        .styled-as-signup {
+          color: $color_dark_violet;
+          text-decoration: underline;
+          margin-left: 1rem;
+        }
+      }
+      .wrapper-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .v-btn {
+          .v-btn__content {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+  &.form-generate {
+    height: auto;
+    .form__wrapper {
+      max-width: 100%;
+      margin: unset;
+      .form__row {
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
+        .wrapper-text {
+          margin-bottom: .8rem;
+        }
+        .form__row-elements {
+          display: flex;
+          flex-wrap: wrap;
+          height: auto;
+          .v-btn {
+            height: 4.8rem !important;
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+            margin-bottom: 1rem;
+            color: rgba($color: $color_white, $alpha: .7);
+            border-color: $color_white;
+            border: .1rem solid;
+            border-radius: .4rem;
+            .v-btn__content {
+              font-size: 1.3rem;
+            }
+            &.text-pink-darken-1 {
+              border-color: $color_pink_btn;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include res('md') {
+  .block-form {
+    height: auto;
+    margin-top: 3rem;
+  }
+}
+
+@include res('sm') {
+  .block-form {
+    .form__wrapper {
+      .form__wrapper-bottom {
+        display: grid;
+        grid-template-columns: 1fr;
+        .wrapper-text {
+          flex-flow: column;
+        }
+        .wrapper-button {
+          grid-row: 2 / 1;
+          .v-btn {
+            width: 100%;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

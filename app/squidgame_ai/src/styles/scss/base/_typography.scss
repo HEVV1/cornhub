@@ -1,0 +1,202 @@
+h1,
+.styled-as-h1 {
+  color: $default_font_color;
+  font-size: $default_font_size;
+  font-family: $default_font_family;
+  font-weight: $default_font_weight;
+  line-height: $default_line_height;
+  font-style: normal;
+}
+
+h2,
+.styled-as-h2 {
+  color: $default_font_color;
+  font-size: $default_font_size;
+  font-family: $default_font_family;
+  font-weight: $default_font_weight;
+  line-height: $default_line_height;
+  font-style: normal;
+}
+
+h3,
+.styled-as-h3 {
+  color: $default_font_color;
+  font-size: $default_font_size;
+  font-family: $default_font_family;
+  font-weight: $default_font_weight;
+  line-height: $default_line_height;
+  font-style: normal;
+}
+
+h4,
+.styled-as-h4 {
+  color: $default_font_color;
+  font-size: $default_font_size;
+  font-family: $default_font_family;
+  font-weight: $default_font_weight;
+  line-height: $default_line_height;
+  font-style: normal;
+}
+
+h5,
+.styled-as-h5 {
+  color: $default_font_color;
+  font-size: $default_font_size;
+  font-family: $default_font_family;
+  font-weight: $default_font_weight;
+  line-height: $default_line_height;
+  font-style: normal;
+}
+
+p,
+.styled-as-p1 {
+  color: $default_font_color;
+  font-size: $default_font_size;
+  font-family: $default_font_family;
+  font-weight: $default_font_weight;
+  line-height: $default_line_height;
+  font-style: normal;
+}
+
+.styled-as-14-400 {
+  color: $default_font_color;
+  font-size: 1.4rem;
+  font-family: $default_font_family;
+  font-weight: 400;
+  line-height: 1.8rem;
+  font-style: normal;
+  letter-spacing: .3rem;
+}
+.styled-as-20-600 {
+  color: $default_font_color;
+  font-size: 2rem;
+  font-family: $default_font_family;
+  font-weight: 200;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: .3rem;
+}
+.styled-as-20-200 {
+  color: $default_font_color;
+  font-size: 2rem;
+  font-family: $default_font_family;
+  font-weight: 200;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: .3rem;
+}
+.styled-as-22-200 {
+  color: $default_font_color;
+  font-size: 2.2rem;
+  font-family: $default_font_family;
+  font-weight: 200;
+  line-height: 3rem;
+  font-style: normal;
+  letter-spacing: .3rem;
+}
+.styled-as-10-400 {
+  color: $default_font_color;
+  font-size: 1rem;
+  font-family: $default_font_family;
+  font-weight: 400;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: .3rem;
+}
+.styled-as-26-400 {
+  color: $default_font_color;
+  font-size: 2.6rem;
+  font-family: $default_font_family;
+  font-weight: 400;
+  line-height: 1;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+.styled-as-65-300 {
+  color: $color_violet_pink;
+  font-size: 6.5rem;
+  font-family: $default_font_family;
+  font-weight: 300;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: .3rem;
+}
+.styled-as-65-800 {
+  color: $color_violet_pink;
+  font-size: 6.5rem;
+  font-family: $default_font_family;
+  font-weight: 800;
+  line-height: 1;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+.styled-as-60-800 {
+  color: $color_text_pink;
+  font-size: 6rem;
+  font-family: $default_font_family;
+  font-weight: 800;
+  line-height: 1;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+.styled-as-150-700 {
+  color: $default_font_color;
+  font-size: 15rem;
+  font-family: $default_font_family;
+  font-weight: 700;
+  line-height: 1;
+  font-style: normal;
+  @include linear-gradient('to bottom, rgba(255, 255, 255, .12) 10%, rgba(255, 255, 255, 0) 70%');
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+.styled-as-180-700 {
+  color: $default_font_color;
+  font-size: 18rem;
+  font-family: $default_font_family;
+  font-weight: 700;
+  line-height: 1;
+  font-style: normal;
+  @include linear-gradient('to bottom, rgba(255, 255, 255, .12) 10%, rgba(255, 255, 255, 0) 70%');
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+@include res('md') {
+  .styled-as-150-700 {
+    font-size: 14rem;
+  }
+  .styled-as-180-700 {
+    font-size: 13vw;
+  }
+  .styled-as-65-300 {
+    font-size: 2.6rem;
+  }
+  .styled-as-65-800 {
+    font-size: 2.6rem;
+  }
+  .styled-as-60-800{
+    font-size: 3rem;
+  }
+  .styled-as-26-400{
+    font-size: 1.4rem;
+  }
+}
+
+@include res('sm') {
+  .styled-as-150-700 {
+    font-size: 9rem;
+  }
+  .styled-as-22-200{
+    font-size: 1.6rem;
+  }
+  .styled-as-20-200{
+    font-size: 1.6rem;
+  }
+}

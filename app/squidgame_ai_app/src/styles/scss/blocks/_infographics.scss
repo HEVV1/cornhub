@@ -1,0 +1,31 @@
+.block-infographics{
+  margin-top: 15rem;
+  .infographics__wrapper{
+    max-width: 84rem;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    .infographics__wrapper-el{
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+
+@include res('md') {
+  .block-infographics{
+    margin-top: 30rem;
+    .infographics__wrapper{
+      width: 80%;
+      margin: unset;
+      justify-content: space-around;
+    }
+  }
+}
+@include res('sm') {
+  .block-infographics{
+    margin-top: 15rem;
+  }
+}

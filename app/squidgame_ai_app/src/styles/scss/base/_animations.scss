@@ -1,0 +1,43 @@
+// FOR THE ICONS IN NAV BAR
+.slide-up-on-hover {
+  transition: cubic-bezier(0.27, 0.48, 0.17, 0.99) $default_transition_time;
+  &:hover {
+    transform: translateY(-.4rem);
+  }
+}
+
+// FOR THE LINKS IN NAV BAR
+.active-nav-link {
+  animation-duration: .2s;
+  animation-name: active-nav-link;
+}
+
+@keyframes active-nav-link {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// FOR ALL ELEMENTS IN WHOLE PAGE LIKE SLIDE UP ON SHOW
+.show-in-view-port {
+  //transition: ease-in-out .2s;
+  animation-name: slide-up;
+  animation-duration: .9s;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 100%;
+  }
+}

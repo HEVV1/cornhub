@@ -1,0 +1,28 @@
+/* Colors -----------------------------------------------------------------*/
+$color_white:                 #FFFFFF; // White
+$color_black:                 #000000; // Black
+$color_primary:               #a09595; // Primary color
+$color_background:            #1D1015; // Main background color
+$color_dark_violet:           #9806CB; // link in navbar
+$color_dark_red:              #B2124C; // link in navbar
+$color_dark_mid_violet:       #400CD7; // background elipsis 1
+$color_pink:                  #D70C55; // background elipsis 2
+$color_light_pink:            #FD298F; // background elipsis 3
+$color_pure_violet:           #B413F5; // background violet
+$color_violet_pink:           #B60C5E; // text violet pink
+$color_grd_blue:              #3AA4F6; // gradient blue
+$color_grd_violet:            #986BFF; // gradient violet
+$color_text_pink:             #FD287E; // text pink
+
+  /* Fonts ------------------------------------------------------------------*/
+$font_awesome_5_pro: 'Font Awesome 5 Pro';
+$font_family_lato: 'Inter', sans-serif;
+$default_font_family: $font_family_lato;
+$default_font_size: 1.4rem;
+$default_font_weight: 400;
+$default_line_height: 2;
+$default_font_color: $color_white;
+/* Other ------------------------------------------------------------------*/
+$regular_content_width: 114rem + 5.4rem; // content + outside gutter (left and right together)
+$image_directory: '../../images/';
+$default_transition_time: .3s;
