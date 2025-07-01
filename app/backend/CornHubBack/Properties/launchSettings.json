@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "CornHubBack": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "JwtSettings__Issuer": "CornHubBackApi",
+        "JwtSettings__Audience": "CornHubBackClients",
+        "JwtSettings__Key": "mysupersecret_secretsecretsecretkey!123",
+        "JwtSettings__ExpiresInMinutes": "60"
+      },
+      "applicationUrl": "https://localhost:57334;http://localhost:57335"
+    }
+  }
+}

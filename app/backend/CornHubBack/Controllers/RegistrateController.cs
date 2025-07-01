@@ -3,7 +3,6 @@ using API_v1.Servic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Intrinsics.X86;
 
 namespace API_v1.Controllers
 {
@@ -32,15 +31,23 @@ namespace API_v1.Controllers
             }
 
             // Проверяем, что пользователь с таким именем пользователя или адресом электронной почты не существует
-            UserModel user = await userService.GetUser(InfoUser.Email);
+            UserModel? user = await userService.GetUser(InfoUser.Email);
 
             if (user == null)
             {
                 // Добавляем нового пользователя
                 var User = new UserModel
-            Console.WriteLine(user);
-            if (user == null)
-            {
+                {
+                    SuccesEmail = InfoUser.SuccesEmail,
+                    Password = InfoUser.Password,
+                    Premium = InfoUser.Premium
+                };
+
+                if (user != null)
+                {
+                    return Unauthorized("Пользователь с таким адресом электронной почты уже существует");
+                }
+
                 // Добавляем нового пользователя
                 user = new UserModel
                 {
@@ -55,31 +62,26 @@ namespace API_v1.Controllers
                 if (result.Succeeded)
                 {
                     // генерация токена для пользователя
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(User);
-                    Console.WriteLine(code);
-                    var callbackUrl = Url.Action(
+                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(User);
+                    Console.WriteLine(token);
+                    var url = Url.Action(
                         "ConfirmEmail",
                         "registrate",
-                        new { userId = User.Id, code = code },
+                        new { userId = User.Id, code = token },
                         protocol: HttpContext.Request.Scheme);
-                    EmailService emailService = new EmailService();
-                    Console.WriteLine("-----------------");
-                    Console.WriteLine(callbackUrl);
-                    await emailService.SendEmailAsync(InfoUser.Email, "Confirm your account",
-                        $"Подтвердите регистрацию, перейдя по ссылке: {callbackUrl}");
+                    EmailService email = new EmailService();
+                    await email.SendEmailAsync(InfoUser.Email, "Confirm your account",
+                        $"Подтвердите регистрацию, перейдя по ссылке: {url}");
 
                     return Ok("Пользователь зарегистрирован");
                 }
                 else
                 {
-/*                    Console.WriteLine("dadssadsadsad");
-                    Console.WriteLine(result);*/
-
                     foreach (var error in result.Errors)
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
-                    return Unauthorized(result);
+                    //return unauthorized(result);
                 }
                 _db.UserModel.Add(user);
                 _db.SaveChanges();
@@ -102,31 +104,28 @@ namespace API_v1.Controllers
 
                 return Content("da");
             }
-            else
-            {
-                return Unauthorized("Пользователь с таким адресом электронной почты уже существует");
-            }
-        }
-        
-        [HttpGet]
-        [AllowAnonymous]
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
-        {
-            if (userId == null || code == null)
-            {
-                return View("Error");
-            }
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                return View("Error");
-            }
-            var result = await _userManager.ConfirmEmailAsync(user, code);
-            if (result.Succeeded)
-                return RedirectToAction("Index", "Home");
-            else
-                return View("Error");
-        }
 
+            [HttpGet]
+            [AllowAnonymous]
+            async Task<IActionResult> ConfirmEmail(string userId, string code)
+            {
+                if (userId == null || code == null)
+                {
+                    return View("Error");
+                }
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
+                {
+                    return View("Error");
+                }
+                var result = await _userManager.ConfirmEmailAsync(user, code);
+                if (result.Succeeded)
+                    return RedirectToAction("Index", "Home");
+                else
+                    return View("Error");
+            }
+
+            return Ok();
+        }
     }
 }

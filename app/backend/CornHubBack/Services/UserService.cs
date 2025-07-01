@@ -14,10 +14,9 @@ namespace API_v1.Servic
             cache = memoryCache;
             _db = db;
         }
-        public async Task<UserModel?> GetUser(string email)
-        {
-            
-                // пытаемся получить данные из кэша
+        public UserModel? GetUser(string email)
+        {           
+            // пытаемся получить данные из кэша
             cache.TryGetValue(email, out UserModel? user);
             // если данные не найдены в кэше
             if (user == null)
