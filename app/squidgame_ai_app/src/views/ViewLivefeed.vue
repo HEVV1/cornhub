@@ -111,7 +111,7 @@ const LIVE_OBJECT_ARRAY: GeneratedPicture[] = reactive([]);
 const liveObjectDoubleArray: GeneratedPicture[][] = reactive(new Array([0][0]));
 
 onMounted(async () => {
-  let url = `http://localhost:62995`
+  let url = `http://localhost:57334`
   await axios.get(`${url}/live`).then((response) => {
     for (let i = 0; i < response.data.length; i++) {
       LIVE_OBJECT_ARRAY[i] = {imgUrl: `data:image/png;base64,${response.data[i]}`};

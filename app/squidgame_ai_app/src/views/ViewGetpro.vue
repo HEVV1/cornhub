@@ -15,7 +15,7 @@
         </div>
         <div class="getpro__row row-left show-in-view-port">
           <div class="wrapper-image">
-            <img src="@/assets/images/image_getpro_keep_face.png" alt="">
+            <img src="@/assets/images/image_getpro_edit_clothing.png" alt="">
           </div>
           <div class="getpro__text-holder">
             <div class="wrapper-text mb-10">
@@ -28,7 +28,7 @@
         </div>
         <div class="getpro__row row-right show-in-view-port">
           <div class="wrapper-image">
-            <img src="@/assets/images/image_getpro_upsacle.png" alt="">
+            <img src="@/assets/images/image_getpro_edit_clothing.png" alt="">
           </div>
           <div class="getpro__text-holder">
             <div class="wrapper-text mb-10">
@@ -64,21 +64,6 @@
             </div>
             <div class="wrapper-text">
               <span class="">Make it perfect</span>
-            </div>
-          </div>
-        </div>
-        <div class="getpro__row row-left show-in-view-port">
-          <div class="wrapper-video">
-            <video muted loop autoplay>
-              <source src="@/assets/video/video_text_to_gif.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="getpro__text-holder">
-            <div class="wrapper-text mb-10">
-              <span class="styled-as-35-500">Text to GIF</span>
-            </div>
-            <div class="wrapper-text">
-              <span class="">Coming soon</span>
             </div>
           </div>
         </div>

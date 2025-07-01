@@ -4,7 +4,7 @@ export default abstract class Human {
   private readonly _hairStyle: string;
   private readonly _ethnicity: string;
 
-  constructor(hairColor: string, hairStyle: string, ethnicity: string, body: Array<string>) {
+  protected constructor(hairColor: string, hairStyle: string, ethnicity: string, body: Array<string>) {
     this._hairColor = hairColor;
     this._hairStyle = hairStyle;
     this._ethnicity = ethnicity;
